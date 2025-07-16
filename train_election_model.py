@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import joblib
 import spacy
+import en_core_web_sm
 import string
 
 # Load your labeled data
@@ -12,7 +13,7 @@ df = pd.read_csv('election_sms_dataset.csv')
 df['Label'] = df['Label'].map({'legitimate': 0, 'phishing': 1})
 
 # Preprocess using spaCy (same as your app)
-nlp = spacy.load("en_core_web_sm")
+nlp = en_core_web_sm.load()
 stop_words = nlp.Defaults.stop_words
 
 def preprocess_text(text):

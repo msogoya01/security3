@@ -1,8 +1,8 @@
 import spacy
+import en_core_web_sm
 import string
 
-# Make sure to run: python -m spacy download en_core_web_sm
-nlp = spacy.load("en_core_web_sm")
+nlp = en_core_web_sm.load()
 
 # Use spaCy's built-in stopwords
 stop_words = nlp.Defaults.stop_words
