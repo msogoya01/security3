@@ -8,4 +8,4 @@ dashboard_bp = Blueprint('dashboard', __name__)
 def dashboard():
     messages = load_messages()
     alerts = get_alerts()
-    return render_template('dashboard.html', messages=messages.iterrows(), alerts=alerts) 
+    return render_template('dashboard.html', messages=messages, alerts=alerts) 
